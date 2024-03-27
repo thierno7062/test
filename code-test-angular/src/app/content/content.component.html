@@ -1,0 +1,33 @@
+<div class="cont">
+  <div class="header">
+
+     <img src="assets/logo1.jpg" alt="" class="logo">
+    <app-header></app-header>
+    <img src="assets/logo2.jpg" alt="" class="logo">
+  </div>
+
+  <button class="btn-new" routerLink="/add-customer">Post New Customer</button>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{customer.name}}</td>
+      <td>{{customer.email}}</td>
+      <td>{{customer.phone}}</td>
+      <td>
+        <button class="btn-update" routerLink="/update-customer/{{customer.id}}">Update</button>
+        <button class="btn-delete" (click)="deleteCustomer(customer.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  <app-menu></app-menu>
+</div>
